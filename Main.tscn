@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://dnpbyr5p6obhb"]
+
+[ext_resource type="PackedScene" uid="uid://dxhat5b5xxum8" path="res://Floor.tscn" id="1_yud6a"]
+[ext_resource type="PackedScene" uid="uid://c0jrvk2x7igvl" path="res://MainCharacter.tscn" id="2_jkm8y"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_houup"]
+
+[sub_resource type="Sky" id="Sky_fnsli"]
+sky_material = SubResource("ProceduralSkyMaterial_houup")
+
+[sub_resource type="Environment" id="Environment_eahih"]
+background_mode = 2
+sky = SubResource("Sky_fnsli")
+ambient_light_source = 3
+reflected_light_source = 2
+
+[node name="Main" type="Node"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 20, 0)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_eahih")
+
+[node name="Floor" parent="." instance=ExtResource("1_yud6a")]
+
+[node name="MainCharacter" parent="." instance=ExtResource("2_jkm8y")]
