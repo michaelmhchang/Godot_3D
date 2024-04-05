@@ -12,6 +12,7 @@ Goals:
 - Create enemy player
   - Create enemy player scene
   - Spawn in multiple enemy players at random
+    -> Can use the 2D tutorial for spawning in instances of mob scenes...
   - Enemy movement toward player
   - Enemy hit detection
   - Create character asset for enemy character
