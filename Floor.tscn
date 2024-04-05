@@ -1,10 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://dxhat5b5xxum8"]
+[gd_scene load_steps=7 format=3 uid="uid://dxhat5b5xxum8"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_w5ws6"]
 size = Vector3(60, 2, 60)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vyhxj"]
 size = Vector3(60, 2, 60)
+
+[sub_resource type="SphereMesh" id="SphereMesh_t7j1m"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_gquvp"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_kb61l"]
 size = Vector3(2, 2, 2)
@@ -22,6 +26,16 @@ mesh = SubResource("BoxMesh_w5ws6")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 shape = SubResource("BoxShape3D_vyhxj")
+
+[node name="Sphere" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.19438, 27.5706, -14.1306)
+disable_mode = 1
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Sphere"]
+mesh = SubResource("SphereMesh_t7j1m")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sphere"]
+shape = SubResource("SphereShape3D_gquvp")
 
 [node name="Box" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -29)
